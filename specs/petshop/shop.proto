@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package petshop.v1;
+
+import "petshop/pet.proto";
+
+option go_package = "github.com/adomi-io/contract-builder-protobuf/petshop/v1";
+
+service PetShopService {
+  rpc GetPet(GetPetRequest) returns (GetPetResponse);
+  rpc ListPets(ListPetsRequest) returns (ListPetsResponse);
+}
+
+message GetPetRequest {
+  int64 id = 1;
+}
+
+message GetPetResponse {
+  Pet pet = 1;
+}
+
+message ListPetsRequest {
+  int32 page_size = 1;
+  string page_token = 2;
+}
+
+message ListPetsResponse {
+  repeated Pet pets = 1;
+  string next_page_token = 2;
+}

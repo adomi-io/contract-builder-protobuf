@@ -1,0 +1,8 @@
+services:
+  generator:
+    image: ghcr.io/adomi-io/contract-builder-protobuf:latest
+    environment:
+      - GENERATORS=python,betterproto,go,typescript
+    volumes:
+      - ./specs:/local/src:ro
+      - ./out:/local/out

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package petshop.v1;
+
+option go_package = "github.com/adomi-io/contract-builder-protobuf/petshop/v1";
+
+message Pet {
+  int64 id = 1;
+  string name = 2;
+  PetType type = 3;
+  repeated string tags = 4;
+}
+
+enum PetType {
+  PET_TYPE_UNSPECIFIED = 0;
+  PET_TYPE_CAT = 1;
+  PET_TYPE_DOG = 2;
+  PET_TYPE_BIRD = 3;
+}
