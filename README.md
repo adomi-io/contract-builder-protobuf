@@ -103,15 +103,15 @@ The language name is converted to uppercase, and hyphens are replaced with under
 
 ## Typical data flow
 
-- Developer updates `specs/petshop/pet.proto`
-- `docker compose up` is triggered
+- Developer updates `specs`
+- `docker compose up` is run
 - The generator container starts, scans `specs/`, and runs `generate.sh`
 - New code is written to `out/petshop/python`, `out/petshop/betterproto`, `out/petshop/go`, etc., depending on your `GENERATORS` setting.
-- Your app uses the updated clients immediately
+- You can use the resulting code in your project.
 
 # Running from source
 
-Clone this repository, and open a terminal in the root directory.
+Clone this repository and open a terminal in the root directory.
 
 ## Build the application
 
@@ -125,14 +125,6 @@ Run `docker compose build`
 Run the application by running
 
 `docker compose up`
-
-If you want to run the application all the time, start it with
-
-`docker compose up -d`
-
-To stop the application, run
-
-`docker compose down`
 
 ## About Adomi
 
